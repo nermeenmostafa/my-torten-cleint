@@ -39,3 +39,64 @@
 .navbar-nav{
 margin-left: auto;
 }
+.h1{
+  font-size: 20px !important;
+}
+.flex-container{
+  display: flex !important;
+}
+.btn{
+  background-color: darkmagenta !important;
+  color: white !important;
+}
+.select{
+  box-shadow:none !important;
+  border:black !important;
+}
+
+.form-box{
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.li-comment{
+  list-style-type: none;
+}
+
+.icon-button, .icon-link {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: none;
+  color: #421646;
+  margin-right: 10px; /* Add margin to separate the button and link */
+}
+
+.icon-button:hover, .icon-link:hover {
+  text-decoration: underline;
+}
+.container mt-5{
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+.form-add{
+  
+}
+.cart{
+ 
+}
