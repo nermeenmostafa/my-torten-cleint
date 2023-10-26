@@ -4,7 +4,7 @@ function CommentList() {
   const [comments, setComments] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5005/api/comments') // Replace with the correct API endpoint
+    fetch('https://project-m-server-ufrw.onrender.com/api/comments') // Replace with the correct API endpoint
       .then((response) => response.json())
       .then((data) => setComments(data))
       .catch((error) => console.error('Error fetching comments:', error));

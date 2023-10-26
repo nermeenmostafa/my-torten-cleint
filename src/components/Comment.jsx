@@ -10,7 +10,7 @@ function Comment() {
 
   const { user } = useContext(AuthContext)
   function getComments() {
-    axios.get('http://localhost:5005/api/comments').then((response) => {
+    axios.get('https://project-m-server-ufrw.onrender.com/api/comments').then((response) => {
       setComments(response.data);
     });
 
@@ -24,7 +24,7 @@ function Comment() {
   const addComment = () => {
     const token = localStorage.getItem('authToken')
     // Send a POST request to create a new comment
-    axios.post('http://localhost:5005/api/comments', { text: newComment, name: user._id }, { headers: { Authorization: `Bearer ${token}` } }).then((response) => {
+    axios.post('https://project-m-server-ufrw.onrender.com/api/comments', { text: newComment, name: user._id }, { headers: { Authorization: `Bearer ${token}` } }).then((response) => {
       // Update the state with the new comment
       console.log('in post')
       // setComments([...comments, response.data]);

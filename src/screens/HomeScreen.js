@@ -6,7 +6,7 @@ function HomeScreen() {
 const[tortes,setTortes]=useState([])
 
 function getTortes(){
-    axios.get('http://localhost:5005/api/tortes')
+    axios.get('https://project-m-server-ufrw.onrender.com/api/tortes')
     .then((response)=>{
         setTortes(response.data)
     })

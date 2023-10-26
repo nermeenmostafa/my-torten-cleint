@@ -7,7 +7,7 @@ import axios from "axios";
 
 
 
-const API_URL = "http://localhost:5005";
+const API_URL = "https://project-m-server-ufrw.onrender.com/";
 
 function LoginPage(props) {
     const [email, setEmail] = useState("");
@@ -24,7 +24,7 @@ function LoginPage(props) {
         e.preventDefault()
         const userInfo = { email, password }
 
-        axios.post(`${API_URL}/auth/login`, userInfo)
+        axios.post(`${process.env.REACT_APP_SERVER_URL}/auth/login`, userInfo)
             .then((response) => {
                 console.log(response.data)
                 localStorage.setItem('authToken', response.data.authToken)

@@ -12,7 +12,7 @@ function EditTorte() {
     const navigate = useNavigate()
 
     function deleteTorte() {
-        axios.delete(`http://localhost:5005/api/tortes/${id}`)
+        axios.delete(`https://project-m-server-ufrw.onrender.com/api/tortes/${id}`)
             .then(response => {
                 navigate('/')
             })
@@ -22,7 +22,7 @@ function EditTorte() {
             })
     }
     useEffect(() => {
-        axios.get(`http://localhost:5005/api/tortes/${id}`)
+        axios.get(`https://project-m-server-ufrw.onrender.com/api/tortes/${id}`)
             .then(response => {
                 console.log(response.data)
                 setName(response.data.name)
@@ -33,7 +33,7 @@ function EditTorte() {
     function handleSubmit(e) {
         e.preventDefault()
 
-        axios.put(`http://localhost:5005/api/tortes/${id}`, { name, description, image })
+        axios.put(`https://project-m-server-ufrw.onrender.com/api/tortes/${id}`, { name, description, image })
             .then((updatedtorte) => {
                 navigate(`/`)
             })
@@ -50,7 +50,7 @@ function EditTorte() {
         // req.body to .create() method when creating a new movie in '/api/movies' POST route
         uploadData.append("imageUrl", e.target.files[0]);
      
-       axios.post('http://localhost:5005/api/upload',uploadData)
+       axios.post('https://project-m-server-ufrw.onrender.com/api/upload',uploadData)
           .then(response => {
              console.log("response is: ", response.data.fileUrl);
             // response carries "fileUrl" which we can use to update the state

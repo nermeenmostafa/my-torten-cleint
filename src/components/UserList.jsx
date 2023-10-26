@@ -5,7 +5,7 @@ const UserList = () => {
   const [users, setUsers] = useState([]);
 
   function  getUsers(){
-    axios.get('http://localhost:5005/api/users')
+    axios.get('https://project-m-server-ufrw.onrender.com/api/users')
     .then((response) => setUsers(response.data))
     .catch((error) => console.error(error));
   }
@@ -14,7 +14,7 @@ const UserList = () => {
   }, []);
   const ChangeUserRole = ( userId ) => {
   
-      axios.post(`http://localhost:5005/api/changeUserRole/${userId}`)
+      axios.post(`https://project-m-server-ufrw.onrender.com/api/changeUserRole/${userId}`)
         .then((response) => {console.log(response.data)
         getUsers()})
         .catch((error) => console.error(error));

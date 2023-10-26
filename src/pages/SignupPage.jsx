@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const API_URL = "http://localhost:5005";
+const API_URL = "https://project-m-server-ufrw.onrender.com/";
 
 function SignupPage(props) {
     const [email, setEmail] = useState("");
@@ -24,7 +24,7 @@ function SignupPage(props) {
 
         const newUser = { email, password, name,isAdmin:false }
 
-        axios.post('http://localhost:5005/auth/signup', newUser)
+        axios.post('https://project-m-server-ufrw.onrender.com/auth/signup', newUser)
             .then(() => {
               
                 navigate('/login')
