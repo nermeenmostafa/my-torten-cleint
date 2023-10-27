@@ -38,8 +38,13 @@ function Torte({ torte, getTortes }) {
 
 
     function addToCart(torte){
+    if(!shoppingCart){
+        setShoppingCart([{torte,quantity:Quantity,size}])
+    }
+    else{
+        setShoppingCart([...shoppingCart,{torte,quantity:Quantity,size}])
+    }
     
-     setShoppingCart([...shoppingCart,{torte,quantity:Quantity,size}])
     }
     const handleTorteClick = (torte) => {
         const updatedCart = [...storedCart, torte];
