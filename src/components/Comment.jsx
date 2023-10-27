@@ -11,14 +11,19 @@ function Comment() {
   const { user } = useContext(AuthContext)
   function getComments() {
     axios.get('https://project-m-server-ufrw.onrender.com/api/comments').then((response) => {
+      console.log(response.data)
       setComments(response.data);
-    });
+    })
+    .catch(err=>{
+      console.log(err)
+    })
 
   }
 
   useEffect(() => {
     // Fetch comments when the component mounts
     getComments()
+    
 
   }, []);
   const addComment = () => {
@@ -43,7 +48,7 @@ function Comment() {
       <h1>Comments</h1>
       <ul style={{fontSize:'20px'}}>
         {comments.map((comment) => (
-          <li className={'li-comment'} key={comment._id}>- {comment.text}</li>
+          <li className={'li-comment'} key={comment._id}>- {comment.text} <br></br> by {comment.name.name}</li>
         ))}
       </ul>
       {/* <input style={{ marginRight: '1rem', marginBottom: '7rem' }}

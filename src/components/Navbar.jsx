@@ -73,8 +73,14 @@ function Navbar() {
                         <li className="nav-item">
                             {user && user.isAdmin && <Link className="nav-link" href="#" to={"/tortes/add"}>
                                 Add Torte
-                            </Link> }
-                           
+                            </Link>}
+
+                        </li>
+                        <li className="nav-item">
+                            {user && user.isAdmin && <Link className="nav-link" href="#" to={"/userList"}>
+                                Change User Roles
+                            </Link>}
+
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" href="#" to={"/comment"}>
@@ -91,6 +97,15 @@ function Navbar() {
 
                             <Link className="nav-link" href="#" to={"/login"}>
                                 login
+                            </Link>
+
+
+
+                        </li>)}
+                        {!user && (<li className="nav-item" >
+
+                            <Link className="nav-link" href="#" to={"/signup"}>
+                                Signup
                             </Link>
 
 
